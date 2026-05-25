@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma to Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'figma-ink': '#000000',
+              'canvas-soft': '#f8fafc'
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-canvas-soft font-sans text-slate-950 antialiased">
+    <!-- Main composition: assembles the reusable vector showcase component. -->
+    <main class="min-h-screen">
+      <!-- components/VectorShowcase.html -->
+      <section class="mx-auto flex min-h-[70vh] w-full max-w-5xl items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] border border-slate-200 bg-white/95 px-8 py-10 shadow-2xl shadow-slate-900/10 sm:px-12 sm:py-14 lg:px-16">
+          <div class="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500">
+            SVG
+          </div>
+          <!-- components/IconMark.html -->
+          <div class="flex justify-center" aria-label="Figma vector mark">
+            <img
+              src="./assets/figma-vector.svg"
+              alt="Abstract black vector mark from the Figma design"
+              class="h-auto w-44 sm:w-56 md:w-64 lg:w-[17.697rem]"
+            />
+          </div>
+          <div class="mt-8 text-center">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-slate-400">Figma node 98:14</p>
+            <h1 class="mt-3 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">Responsive vector component</h1>
+            <p class="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
+              The selected design node contained a single black vector. It has been exported as an SVG asset and wrapped in a reusable Tailwind component with responsive sizing at sm, md, and lg breakpoints.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
